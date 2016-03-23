@@ -18,7 +18,7 @@ Include the following command in your `$commands` attribute of `app/Console/Kern
  \Themsaid\RoutesPublisher\RoutesPublisherCommand::class
  ```
 
- # Usage
+# Usage
 
 Run the following command:
 
@@ -36,7 +36,7 @@ routes.php.backup
 Replace the content of your `routes.php` file with this of `routes.php.generated`, knowing that if anything went wrong a backup
 of your original `routes.php`'s content will be available in `routes.php.backup`.
 
-## This package assumes the following:
+### This package assumes the following:
 
 - Your `routes.php` doesn't contain any PHP syntax errors.
 - Your `routes.php` file is located in `app\Http\routes.php` with the exact name.
