@@ -2,7 +2,10 @@
 
 A command to replace deprecated `Route::controller()` and `Route::controllers()` with explicit routes.
 
-![what it does](http://s11.postimg.org/9smjxvrpv/Screen_Shot_2016_03_23_at_12_32_02_PM.png)
+![what it does](http://s17.postimg.org/x5q8vfrfz/Screen_Shot_2016_03_23_at_12_36_34_PM.png)
+
+In laravel 5.3 implicit controller routes will be removed from the framework, the functionality will likely be extracted into a separate
+package, however if you'd like to make the move and start using explicit routes this package will help you.
 
 # Installation
 
