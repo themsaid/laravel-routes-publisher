@@ -48,6 +48,6 @@ of your original `routes.php`'s content will be available in `routes.php.backup`
 - Your `routes.php` files doesn't include any other file using `include` or `require`.
 - Your Application namespace is correctly registered in the psr-4 section of `composer.json`.
 
-# Issues
+# Problems?
 I tried hard to cover different syntax and file formatting in this package, however if you found any problems while using the
 package please [open a new issue](https://github.com/themsaid/laravel-routes-publisher/issues/new).
