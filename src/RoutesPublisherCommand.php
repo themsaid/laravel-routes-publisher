@@ -8,14 +8,14 @@ use Illuminate\Support\Str;
 use ReflectionMethod;
 use ReflectionClass;
 
-class RoutePublishCommand extends Command
+class RoutesPublisherCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'routes:publish';
+    protected $signature = 'themsaid:publishRoutes';
 
     /**
      * The console command description.
@@ -78,7 +78,7 @@ class RoutePublishCommand extends Command
 
         file_put_contents(app_path('Http/routes.php.generated'), $output);
 
-        $this->info('Done! File publish in: '.app_path('Http/routes.php.generated'));
+        $this->info('Done! File published in "'.app_path('Http/routes.php.generated').'"');
     }
 
     /**
