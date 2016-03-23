@@ -50,13 +50,13 @@ class RoutesPublisherCommand extends Command
      */
     public function handle()
     {
-        $fileContent = $this->prepareFileContent(
-            file_get_contents(app_path('Http/routes.php'))
-        );
+        $exactFileContent = file_get_contents(app_path('Http/routes.php'));
+
+        $preparedFileContent = $this->prepareFileContent($exactFileContent);
 
         $output = '';
 
-        foreach (explode("\n", $fileContent) as $line) {
+        foreach (explode("\n", $preparedFileContent) as $line) {
             $preparedLine = $this->prepareLine($line);
 
             if (preg_match('/controller(?:[^s\(]*)\(([^,]*),([^,)]*)/', $preparedLine, $matches)) {
@@ -78,7 +78,11 @@ class RoutesPublisherCommand extends Command
 
         file_put_contents(app_path('Http/routes.php.generated'), $output);
 
-        $this->info('Done! File published in "'.app_path('Http/routes.php.generated').'"');
+        file_put_contents(app_path('Http/routes.php.backup'), $preparedFileContent);
+
+        $this->info('Done! Generated file was published in "'.app_path('Http/routes.php.generated').'"');
+
+        $this->info('Also a backup of routes.php was published in "'.app_path('Http/routes.php.backup').'"');
     }
 
     /**
