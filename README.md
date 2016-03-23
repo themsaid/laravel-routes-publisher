@@ -31,14 +31,14 @@ Run the following command:
 php artisan themsaid:publishRoutes
 ```
 
-After the command is done, 2 new files will be generated in your `app/Http` directory
+After the command is done, two new files will be generated in your `app/Http` directory:
 
 ```
 routes.php.generated
 routes.php.backup
 ```
 
-Replace the content of your `routes.php` file with this of `routes.php.generated`, knowing that if anything went wrong a backup
+Replace the content of your `routes.php` file with that of `routes.php.generated`, knowing that if anything went wrong a backup
 of your original `routes.php`'s content will be available in `routes.php.backup`.
 
 ### This package assumes the following:
@@ -47,3 +47,7 @@ of your original `routes.php`'s content will be available in `routes.php.backup`
 - Your `routes.php` file is located in `app\Http\routes.php` with the exact name.
 - Your `routes.php` files doesn't include any other file using `include` or `require`.
 - Your Application namespace is correctly registered in the psr-4 section of `composer.json`.
+
+# Issues
+I tried hard to cover different syntax and file formatting in this package, however if you found any problems while using the
+package please [open a new issue](https://github.com/themsaid/laravel-routes-publisher/issues/new).
