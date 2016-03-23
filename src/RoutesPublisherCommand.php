@@ -61,7 +61,7 @@ class RoutesPublisherCommand extends Command
 
             if (preg_match('/controller(?:[^s\(]*)\(([^,]*),([^,)]*)/', $preparedLine, $matches)) {
                 if (count($matches) != 3) {
-                    $this->error($preparedLine.' Looks weired, unable to parse it.');
+                    $this->error($preparedLine.' Looks weird, unable to parse it.');
                 }
 
                 preg_match('/^( *)/', $line, $spaces);
