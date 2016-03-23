@@ -1,0 +1,22 @@
+{
+    "name": "themsaid/laravel-routes-publisher",
+    "description": "A command to replace deprecated Route::controller with explicit routes.",
+    "keywords": ["laravel", "routes"],
+    "homepage": "https://github.com/themsaid/laravel-routes-publisher",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mohamed Said",
+            "email": "theMohamedSaid@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "illuminate/support": "^5.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Themsaid\\RoutesPublisher\\": "src"
+        }
+    }
+}
