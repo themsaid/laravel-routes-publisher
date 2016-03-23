@@ -2,6 +2,8 @@
 
 A command to replace deprecated `Route::controller()` and `Route::controllers()` with explicit routes.
 
+![what it does](http://s11.postimg.org/9smjxvrpv/Screen_Shot_2016_03_23_at_12_32_02_PM.png)
+
 # Installation
 
 #### Step 1:
@@ -14,9 +16,9 @@ composer require themsaid/laravel-routes-publisher
 
 Include the following command in your `$commands` attribute of `app/Console/Kernel.php`:
 
- ```
- \Themsaid\RoutesPublisher\RoutesPublisherCommand::class
- ```
+```
+\Themsaid\RoutesPublisher\RoutesPublisherCommand::class
+```
 
 # Usage
 
