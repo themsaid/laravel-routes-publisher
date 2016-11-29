@@ -168,7 +168,7 @@ class RoutesPublisherCommand extends Command
         $routables = array_filter($methods, function ($method) {
             return
                 $method->class != 'Illuminate\Routing\Controller' &&
-                Str::startsWith($method->name, ['get', 'post', 'put', 'delete', 'patch']);
+                Str::startsWith($method->name, ['any', 'get', 'post', 'put', 'delete', 'patch']);
         });
 
         $routes = "\n$initialSpace// $controller\n";
