@@ -22,7 +22,7 @@ class RoutesPublisherCommand extends Command
      *
      * @var string
      */
-    protected $description = 'Publish implicit controller routes into routes.php';
+    protected $description = 'Publish implicit controller routes into routes file';
 
     /**
      * The controllers namespace.
@@ -30,6 +30,14 @@ class RoutesPublisherCommand extends Command
      * @var string
      */
     protected $controllersNamespace = 'Http\Controllers';
+    
+    
+    /**
+     * The routes file path
+     *
+     * @var string
+     */
+    public $routesFilePath = 'app/Http/routes.php';
 
     /**
      * Create a new command instance.
@@ -50,7 +58,7 @@ class RoutesPublisherCommand extends Command
      */
     public function handle()
     {
-        $exactFileContent = file_get_contents(app_path('Http/routes.php'));
+        $exactFileContent = file_get_contents(base_path($this->routesFilePath));
 
         $preparedFileContent = $this->prepareFileContent($exactFileContent);
 
@@ -76,13 +84,13 @@ class RoutesPublisherCommand extends Command
             }
         }
 
-        file_put_contents(app_path('Http/routes.php.generated'), $output);
+        file_put_contents(base_path($this->routesFilePath . '.generated'), $output);
 
-        file_put_contents(app_path('Http/routes.php.backup'), $preparedFileContent);
+        file_put_contents(base_path($this->routesFilePath . '.backup'), $preparedFileContent);
 
-        $this->info('Done! Generated file was published in "'.app_path('Http/routes.php.generated').'"');
+        $this->info('Done! Generated file was published in "'.base_path($this->routesFilePath . '.generated').'"');
 
-        $this->info('Also a backup of routes.php was published in "'.app_path('Http/routes.php.backup').'"');
+        $this->info('Also a backup of '. basename('$this->routesFilePath') .' was published in "'.base_path($this->routesFilePath . '.backup').'"');
     }
 
     /**
