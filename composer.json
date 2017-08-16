@@ -18,5 +18,12 @@
         "psr-4": {
             "Themsaid\\RoutesPublisher\\": "src"
         }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Themsaid\\RoutesPublisher\\RoutesPublisherCommand"
+            ]
+        }
     }
 }
