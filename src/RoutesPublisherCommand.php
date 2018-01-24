@@ -256,8 +256,15 @@ class RoutesPublisherCommand extends Command
         $output = '';
 
         foreach ($routable->getParameters() as $parameter) {
-            if ($parameter->hasType()) {
-                continue;
+            if (method_exists($parameter, 'hasType')) {
+                if ($parameter->hasType()) {
+                    continue;
+                }
+            } else {
+                $v = explode(' ', $parameter->__toString(), 6);
+                if (isset($v[5]) && 0 === strspn($v[4], '.&$')) {
+                    continue;
+                }
             }
 
             $wildCard = Str::snake($parameter->getName()).($parameter->isDefaultValueAvailable() ? '?' : '');
